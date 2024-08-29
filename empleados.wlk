@@ -1,5 +1,25 @@
 object galvan {
     var sueldo = 15000
+    var saldo = 0
+
+    method dinero() {
+        return saldo.max(0)
+        // return if (saldo >= 0) saldo else 0
+    }
+
+    method deuda() {
+        return saldo.min(0)
+        // return if (saldo >= 0) saldo else 0
+
+    }
+
+    method gastar(cuanto) {
+        saldo -= cuanto
+    }
+
+    method cobrarSueldo() {
+        saldo += sueldo
+    }
 
     method sueldo (_sueldo) {
         sueldo = _sueldo
@@ -46,6 +66,7 @@ object gimenez {
 
     method pagarSueldoAEmpleado (empleado) {
         fondo = fondo - empleado.sueldo()
+        empleado.cobrarSueldo()
     }
 
     method fondo() {
