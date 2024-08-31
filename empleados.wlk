@@ -8,8 +8,8 @@ object galvan {
     }
 
     method deuda() {
-        return saldo.min(0)
-        // return if (saldo >= 0) saldo else 0
+        return saldo.min(0).abs()
+        // return if (saldo < 0) saldo else 0
 
     }
 
